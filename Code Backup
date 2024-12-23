@@ -46,6 +46,8 @@ const VOCABULARY = [
     {text: "Good Game", icon: "\u00a3", key: "G"},
     {text: "Kill",      icon: "\u007f", key: "K"},
     {text: "High Score",icon: "\u002e", key: "K"},
+    // 4
+    //{text: "Wait",      icon: "\u0048", key: "T"},
     // 5
     {text: "",   icon: "\u{1D7CF}", key: "1"},
     {text: "",   icon: "\u{1D7D0}", key: "2"},
@@ -92,9 +94,21 @@ var Regen = function(ship) {
 } ;
 
 var A_Speed = function(ship) {
-  ship.set({type:605, stats:88888888, crystals:980, shield: 1000});
-}
+  ship.set({type:605, stats:88888888, crystals:720, shield: 1000});
+};
 
+var redX = {
+  id: "redX",
+  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/redX.obj",
+  emissiveColor: 0xFF0000
+};
+
+var greenY = {
+  id: "greenY",
+  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/greenY.obj",
+  emissiveColor: 0x00FF00
+};
+  
 this.options = {
   soundtrack: "argon.mp3",
   root_mode: "",
@@ -110,6 +124,24 @@ this.options = {
 };
 
 this.tick = function(game) {
+  if (game.step==60)
+  {
+    game.setObject({
+    id: "redX",
+    type: redX,
+    position: {x:-105,y:-105,z:-2},
+    rotation: {x:0,y:0,z:0},
+    scale: {x:1,y:1,z:1}
+    }) ;
+    
+    game.setObject({
+    id: "greenY",
+    type: greenY,
+    position: {x:-105,y:-115,z:-2},
+    rotation: {x:0,y:0,z:0},
+    scale: {x:1,y:1,z:1}
+    }) ;
+  }
   if (game.step%60===0)
   {
     for (var i=0;i<game.ships.length;i++)
@@ -131,17 +163,17 @@ this.tick = function(game) {
   {
     if (game.aliens.length===0)
     {
-    game.addAlien({x:135,y:135,code:15,level:1,points:0,crystal_drop:0})
+    game.addAlien({x:100,y:100,code:16,level:3,points:0,crystal_drop:0})
     }
     else
     {
       if (game.aliens[0].x<=0)
       {
-      game.aliens[0].set({x:75,y:75,vx:0,vy:0})
+      game.aliens[0].set({kill:true})
       }
       if (game.aliens[0].y<=0)
       {
-      game.aliens[0].set({x:75,y:75,vx:0,vy:0})
+      game.aliens[0].set({kill:true})
       }
     }
   }
