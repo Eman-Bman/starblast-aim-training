@@ -345,17 +345,6 @@ var shipCount = function() {
   }
 };
 
-var tellShip = function(ship){
-  sendUI(ship, {
-    id: "timer",
-    position: [2.5,28,15,10],
-    visible: true,
-    components: [
-    {type: "text",position:[0,0,100,50],value:(`Current Ship: `+(shipnames[ship.type-601])),color:"#cde"},
-    ]
-  });
-}
-
 var remAst4 = function()
 {
   for (var l=game.asteroids.length-1;l>-1;l--)
@@ -736,7 +725,7 @@ this.tick = function(game) {
       position: [2.5,28,15,10],
       visible: true,
       components: [
-      {type: "text",position:[0,0,100,50],value:(`Current Ship: `+(shipnames[ship.type-601])),color:"#cde"},
+      {type: "text",position:[0,0,100,50],value:(`Current Ship: `+(shipnames[game.ships[j].type-601])),color:"#cde"},
       ]
     });
     }
