@@ -688,7 +688,7 @@ this.tick = function(game) {
       if (game.asteroids[k].x<-330)
       {
         game.asteroids[k].set({kill:true})
-        if (area3==1)
+        if (area3!=0)
         {
           for (var l=0;l<a3ship.length;l++) {
             if (game.ships[a3ship[l]].shield>50)
