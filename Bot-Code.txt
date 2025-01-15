@@ -798,6 +798,7 @@ this.event = function(event,game) {
         {
           remAst4();
           rerem=game.step+30
+          a4ship=[]
         }
       }
       if ((((ship.x+250)*(ship.x+250))+((ship.y+250)*(ship.y+250)))<=12100)
@@ -807,6 +808,7 @@ this.event = function(event,game) {
         if (area3===0)
         {
           remAst3();
+          a3ship=[]
         }
       }
       shipCount();
