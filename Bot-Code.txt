@@ -709,7 +709,7 @@ this.tick = function(game) {
   {
     for (var k=0;k<game.aliens.length;k++)        //kill ob aliens
     {
-    game.aliens[k].set({regen:0,damage:84,laser_speed:205});
+    game.aliens[k].set({regen:0,damage:84,laser_speed:100});
       if (((((game.aliens[k].x-250)*(game.aliens[k].x-250))+((game.aliens[k].y-250)*(game.aliens[k].y-250))))>=10000)
       {
       game.aliens[k].set({kill:true});
