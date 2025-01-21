@@ -159,7 +159,7 @@ const VOCABULARY = [
     {text: "High Score",icon: "\u002e", key: "I"},
     // 4
     {text: "Random#1",    icon: emote1, key: "L"},
-    {text: "Random#2",    icon: emote2, key:"Z"},
+    {text: "Discord",    icon: "\u007b", key:"Z"},
     {text: "Random#3",    icon: emote3, key:"X"},
     {text: "Random#4",    icon: emote4, key:"P"},
     // 5
