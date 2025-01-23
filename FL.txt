@@ -1502,7 +1502,8 @@ const scheduleJob = (ms, callback) => {
     
     return jobID;
 }
-
+let textlist=""
+let pCount=0
 this.tick = (game) => {
     if (staticMemory.DISABLE_TICK_THROTTLE || (game.step % _lastCalculatedTickDelay === 0)) {
         if (game.ships.length < _lastNumOfShips) {
@@ -1545,11 +1546,17 @@ this.tick = (game) => {
             }
         }
     }
-  if (game.ships.length >= 1) {
+  if (game.ships.length >= 1 && game.step%10===0) {
+    pCount=0
+    textlist=""
     for (let k = 0; k < game.ships.length; k++) {
-      if (game.ships[k].alive === true && game.ships[k].crystals >= 2 && game.step%10===0) {
-      echo(`!${game.ships[k].name}, ${game.ships[k].x}, ${game.ships[k].y}, ${game.ships[k].vx}, ${game.ships[k].vy}, ${game.ships[k].r}, ${game.ships[k].shield}, ${game.ships[k].crystals}, `)
+      if (game.ships[k].alive === true && game.ships[k].crystals >= 2 && game.ships[k].shield<=100) {
+        pCount=pCount+1
+        textlist=textlist+`!${game.ships[k].name}, ${game.ships[k].x}, ${game.ships[k].y}, ${game.ships[k].vx}, ${game.ships[k].vy}, ${game.ships[k].r}, ${game.ships[k].shield}, ${game.ships[k].crystals}, `)
       }
+    }
+    if (pCount=2) {
+      echo(textlist)
     }
   }
 }
