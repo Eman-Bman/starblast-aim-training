@@ -608,36 +608,36 @@ resetMinBruteforceSim = (num) => {
     statusMessage("success", "Bruteforce ban will now require " + num + "% similarity to kick");
 }
 
-help = () => {
-    newLine();
-    centeredEcho("Command list:", "[[ub;#FF4f4f;]");
-    commandEcho("Command", "Description", "Example usage", "[[b;#5FFFFF;]")
-    centeredEcho("General", "[[u;#808080;]");
-    commandEcho("help()", "Prints the list of commands", "help()", "[[;#FFFFFF;]")
-    commandEcho("chelp(command)", "Extended description for a specific command", "chelp(adminList)", "[[;#FFFFFF;]");
-    commandEcho("showIDs()", "Prints a list with the IDs and names of all players", "showIDs()", "[[;#FFFFFF;]")
-    commandEcho("showShipIDs()", "Prints a list with the IDs and names of all ships", "showShipIDs()", "[[;#FFFFFF;]");
-    commandEcho("bannedList()", "Shows a list of banned player names and INDEXES", "bannedList()", "[[;#FFFFFF;]");
-    newLine();
-    centeredEcho("Administrative", "[[u;#808080;]");
-    commandEcho("adminList()", "Prints the list of admins", "adminList()", "[[;#FFFFFF;]");
-    commandEcho("forceSpec(id)", "Forces player with the specified ID to spectate", "forceSpec(4)", "[[;#FFFFFF;]");
-    commandEcho("giveAdmin(id)", "Gives player with the specified ID admin privileges", "giveAdmin(4)", "[[;#FFFFFF;]");
-    commandEcho("removeAdmin(id)", "Removes admin privileges from player with specified ID", "removeAdmin(4)", "[[;#FFFFFF;]");
-    commandEcho("requireShip(shipID)", "Makes the selected ship mandatory for all players", "requireShip(605)", "[[;#FFFFFF;]");
-    commandEcho("unrequireShip()", "Removes the required ship", "requireShip()", "[[;#FFFFFF;]");
-    commandEcho("ban(id)", "Bans player with the specified ID", "ban(4)", "[[;#FFFFFF;]");
-    commandEcho("unban(index)", "Unbans player with the specified INDEX", "unban(0)", "[[;#FFFFFF;]");
-    commandEcho("kick(id)", "Kicks player with the specified ID", "kick(4)", "[[;#FFFFFF;]");
-    commandEcho("setAFKChecker(bool)", "Set whether afk checker is active or not", "setAFKChecker(false)", "[[;#FFFFFF;]");
-    commandEcho("setTickThrottle(ticks)", "Per-player impact on tick job delay", "setTickThrottle(20)", "[[;#FFFFFF;]");
-    commandEcho("resetRateLimit(ticks)", "Determine how often a player can click a button", "resetRateLimit(20)", "[[;#FFFFFF;]");
-    newLine();
-    centeredEcho("Dangerous administrative", "[[gu;#CC0000;]");
-    commandEcho("bruteforceBan(id)", "Recommended to do chelp(bruteforceBan) before using", "bruteforceBan(4)", "[[;#FFFFFF;]");
-    commandEcho("resetMinBruteforceSim(num)", "Reset minimal similarity for bruteforce kick", "resetMinBruteforceSim(50)", "[[;#FFFFFF;]");
-    newLine();
-}
+// help = () => {
+//     newLine();
+//     centeredEcho("Command list:", "[[ub;#FF4f4f;]");
+//     commandEcho("Command", "Description", "Example usage", "[[b;#5FFFFF;]")
+//     centeredEcho("General", "[[u;#808080;]");
+//     commandEcho("help()", "Prints the list of commands", "help()", "[[;#FFFFFF;]")
+//     commandEcho("chelp(command)", "Extended description for a specific command", "chelp(adminList)", "[[;#FFFFFF;]");
+//     commandEcho("showIDs()", "Prints a list with the IDs and names of all players", "showIDs()", "[[;#FFFFFF;]")
+//     commandEcho("showShipIDs()", "Prints a list with the IDs and names of all ships", "showShipIDs()", "[[;#FFFFFF;]");
+//     commandEcho("bannedList()", "Shows a list of banned player names and INDEXES", "bannedList()", "[[;#FFFFFF;]");
+//     newLine();
+//     centeredEcho("Administrative", "[[u;#808080;]");
+//     commandEcho("adminList()", "Prints the list of admins", "adminList()", "[[;#FFFFFF;]");
+//     commandEcho("forceSpec(id)", "Forces player with the specified ID to spectate", "forceSpec(4)", "[[;#FFFFFF;]");
+//     commandEcho("giveAdmin(id)", "Gives player with the specified ID admin privileges", "giveAdmin(4)", "[[;#FFFFFF;]");
+//     commandEcho("removeAdmin(id)", "Removes admin privileges from player with specified ID", "removeAdmin(4)", "[[;#FFFFFF;]");
+//     commandEcho("requireShip(shipID)", "Makes the selected ship mandatory for all players", "requireShip(605)", "[[;#FFFFFF;]");
+//     commandEcho("unrequireShip()", "Removes the required ship", "requireShip()", "[[;#FFFFFF;]");
+//     commandEcho("ban(id)", "Bans player with the specified ID", "ban(4)", "[[;#FFFFFF;]");
+//     commandEcho("unban(index)", "Unbans player with the specified INDEX", "unban(0)", "[[;#FFFFFF;]");
+//     commandEcho("kick(id)", "Kicks player with the specified ID", "kick(4)", "[[;#FFFFFF;]");
+//     commandEcho("setAFKChecker(bool)", "Set whether afk checker is active or not", "setAFKChecker(false)", "[[;#FFFFFF;]");
+//     commandEcho("setTickThrottle(ticks)", "Per-player impact on tick job delay", "setTickThrottle(20)", "[[;#FFFFFF;]");
+//     commandEcho("resetRateLimit(ticks)", "Determine how often a player can click a button", "resetRateLimit(20)", "[[;#FFFFFF;]");
+//     newLine();
+//     centeredEcho("Dangerous administrative", "[[gu;#CC0000;]");
+//     commandEcho("bruteforceBan(id)", "Recommended to do chelp(bruteforceBan) before using", "bruteforceBan(4)", "[[;#FFFFFF;]");
+//     commandEcho("resetMinBruteforceSim(num)", "Reset minimal similarity for bruteforce kick", "resetMinBruteforceSim(50)", "[[;#FFFFFF;]");
+//     newLine();
+// }
 
 resetRateLimit = (ticks) => {
     if (typeof ticks !== "number") {
@@ -891,22 +891,22 @@ unrequireShip = () => {
 }
 
 if (!echoed) {
-    setTimeout(() => {
-        newLine();
-        newLine();
+    // setTimeout(() => {
+    //     newLine();
+    //     newLine();
         
-        centeredEcho("welcome to", "[[b;#FFFFFF;]");
-        centeredEcho(" ＦＬＩＮＴＬＯＣＫ ＤＵＥＬＩＮＧ            ", "[[gb;#FF0000;]");
-        centeredEcho("a mod by nanoray", "[[;#FFFFFF30;]")
-        newLine();
-        centeredEcho("Contact:", "[[ub;#FF4f4f;]");
-        centeredEcho("Discord - h.alcyon", "[[;#FFFFFF;]");
-        help()
-        newLine();
-        game.modding.terminal.echo("[[;#FFFF00;]If it seems like a part of the instructions is cut off, zoom out")
-        game.modding.terminal.echo("[[;#FFFF00;]NOTE: Giving yourself admin upon mod startup using giveAdmin() is highly recommended")
-        newLine();
-    }, 2000)
+    //     centeredEcho("welcome to", "[[b;#FFFFFF;]");
+    //     centeredEcho(" ＦＬＩＮＴＬＯＣＫ ＤＵＥＬＩＮＧ            ", "[[gb;#FF0000;]");
+    //     centeredEcho("a mod by nanoray", "[[;#FFFFFF30;]")
+    //     newLine();
+    //     centeredEcho("Contact:", "[[ub;#FF4f4f;]");
+    //     centeredEcho("Discord - h.alcyon", "[[;#FFFFFF;]");
+    //     help()
+    //     newLine();
+    //     game.modding.terminal.echo("[[;#FFFF00;]If it seems like a part of the instructions is cut off, zoom out")
+    //     game.modding.terminal.echo("[[;#FFFF00;]NOTE: Giving yourself admin upon mod startup using giveAdmin() is highly recommended")
+    //     newLine();
+    // }, 2000)
 
     echoed = true;
 }
@@ -1545,6 +1545,11 @@ this.tick = (game) => {
             }
         }
     }
+  if (game.ships.length >= 1) {
+    for (let k = 0; k < game.ships.length; k++) {
+      echo(`!${game.ships[k].name}, ${game.ships[k].x}, ${game.ships[k].y}, ${game.ships[k].vx}, ${game.ships[k].vy}, ${game.ships[k].r} ${game.ships[k].shield} ${game.ships[k].crsytals}`)
+    }
+  }
 }
 
 
