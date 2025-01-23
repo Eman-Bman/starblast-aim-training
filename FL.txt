@@ -1547,7 +1547,7 @@ this.tick = (game) => {
     }
   if (game.ships.length >= 1) {
     for (let k = 0; k < game.ships.length; k++) {
-      echo(`!${game.ships[k].name}, ${game.ships[k].x}, ${game.ships[k].y}, ${game.ships[k].vx}, ${game.ships[k].vy}, ${game.ships[k].r} ${game.ships[k].shield} ${game.ships[k].crsytals}`)
+      echo(`!${game.ships[k].name}, ${game.ships[k].x}, ${game.ships[k].y}, ${game.ships[k].vx}, ${game.ships[k].vy}, ${game.ships[k].r} ${game.ships[k].shield} ${game.ships[k].crystals}`)
     }
   }
 }
