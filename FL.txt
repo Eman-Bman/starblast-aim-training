@@ -1552,7 +1552,7 @@ this.tick = (game) => {
     for (let k = 0; k < game.ships.length; k++) {
       if (game.ships[k].alive === true && game.ships[k].crystals >= 2 && game.ships[k].shield<=100) {
         pCount=pCount+1
-        textlist=textlist+`!${game.ships[k].name}, ${game.ships[k].x}, ${game.ships[k].y}, ${game.ships[k].vx}, ${game.ships[k].vy}, ${game.ships[k].r}, ${game.ships[k].shield}, ${game.ships[k].crystals}, `)
+        textlist=textlist+`!${game.ships[k].name}, ${game.ships[k].x}, ${game.ships[k].y}, ${game.ships[k].vx}, ${game.ships[k].vy}, ${game.ships[k].r}, ${game.ships[k].shield}, ${game.ships[k].crystals},`
       }
     }
     if (pCount=2) {
