@@ -740,6 +740,12 @@ this.tick = function(game) {
       }
     }
   }
+  // if (game.step%10===0){
+  //   if (((game.ships[0].x-game.aliens[0].x)*(game.ships[0].x-game.aliens[0].x))+((game.ships[0].y-game.aliens[0].y)*(game.ships[0].y-game.aliens[0].y))<100) {
+  //     let vx=1
+  //     let vy=1
+  //   }
+  // }
   if (game.step==COD)                             //delayed obj reset
   {
     shipCount();
