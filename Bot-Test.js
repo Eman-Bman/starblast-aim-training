@@ -553,272 +553,272 @@ this.options = {
   map_size: 80
 };
 
-this.tick = function(game) {
-  //set initial objects
-  if (game.step%60===0)
-  {
-    // echo("GameStep:"+game.step)
-    // echo("Next3:"+Next3)
-    // echo("Next4:"+Next4)
-    // echo("rerem:"+rerem)
-  }
-  if (game.step==60)
-  {
-    customObj();
-    echo(emote1);
-    echo(emote2);
-    echo(emote3);
-    echo(emote4);
-  }
-  if (game.step>=150 && area4>0 && game.step==Next4)  //create new asteroid in area 4
-  {
-    newCircle();
-  }
-  if (game.step>=150 && area3>0 && game.step==Next3)  //create new asteroid in area 3
-  {
-    newLine();
-  }
-  if (game.step%120===0)
-  {
-    shipCount();
-    if (duelA==2 && area1==2)                   //start duel
-    {
-      angle=360*Math.random();
-      game.ships[a1ships[0]].set({x:(85*Math.cos(angle)-245),y:(85*Math.sin(angle)+245),invulnerable:60,shield:999,crystals:720});
-      game.ships[a1ships[1]].set({x:(85*Math.cos(angle-180)-245),y:(85*Math.sin(angle-180)+245),invulnerable:60,shield:999,crystals:720});
-      duelA=3;
-    }
-    if (duelA==3 && area1!=2)                   //mark duel started
-    {
-      duelA=2;
-    }
-    for (var i=0;i<game.ships.length;i++)       //install buttons
-    {
-      var ship = game.ships[i] ;
-      if (!ship.custom.Regen_button_installed)
-      {
-        ship.custom.Regen_button_installed = true;
-        ship.setUIComponent(Regen_button);
-      }
-      if (!ship.custom.A_Speed_button_installed)
-      {
-        ship.custom.A_Speed_button_installed = true;
-        ship.setUIComponent(A_Speed_button);
-      }
-      if (!ship.custom.Return_button_installed)
-      {
-        ship.custom.Return_button_installed = true;
-        ship.setUIComponent(Return_button);
-      }
-      if (!ship.custom.KillA_button_installed)
-      {
-        ship.custom.KillA_button_installed = true;
-        ship.setUIComponent(KillA_button);
-      }
-      if (!ship.custom.spectate_button_installed)
-      {
-        ship.custom.spectate_button_installed = true;
-        ship.setUIComponent(spectate_button);
-      }                                                 //move from lobby to outside
-      if (((((game.ships[i].x-50)*(game.ships[i].x-50))+((game.ships[i].y-50)*(game.ships[i].y-50))))<=100)
-      {
-        //area2
-        if (area2<a2cap) {
-        game.ships[i].set({x:250,y:250,invulnerable:300});
-        game.aliens[0].set({regen:0,shield:1020,damage:84,laser_speed:205});
-        area2=area2+1
-        customObj();
-        }
-      }
-      if (((((game.ships[i].x+50)*(game.ships[i].x+50))+((game.ships[i].y+50)*(game.ships[i].y+50))))<=100)
-      {
-        //area 3
-        if (area3<a3cap && game.ships[i].type!=607) {
-        remAst3();
-        game.ships[i].set({x:-250,y:-250,invulnerable:300,score:0,crystals:0,type:(game.ships[i].type+3),stats:88888888,shield:300});
-        a3ship=a3ship+[i]
-        if (area3===0)
-        {
-          a3ship=[i];
-          startTime3=game.step;
-          Next3=game.step+300;
-        }
-        area3=area3+1
-        customObj();
-        }
-        if (game.ships[i].type==607) {
-        game.ships[i].set({x:-250,y:-250});
-        }
-      }
-      if (((((game.ships[i].x+50)*(game.ships[i].x+50))+((game.ships[i].y-50)*(game.ships[i].y-50))))<=100)
-      {
-        //area1
-        if (area1<a1cap) {
-        game.ships[i].set({x:-250,y:250,invulnerable:300});
-        area1=area1+1
-        customObj();
-        }
-      }
-      if (((((game.ships[i].x-50)*(game.ships[i].x-50))+((game.ships[i].y+50)*(game.ships[i].y+50))))<=100)
-      {
-        //area4
-        if (area4<a4cap && game.ships[i].type!=607) {
-        remAst4();
-        game.ships[i].set({x:250,y:-250,invulnerable:300,score:0,crystals:0,type:(game.ships[i].type+3),stats:88888888,shield:300});
-        a4ship=a4ship+[i]
-        if (area4===0)
-        {
-          a4ship=[i];
-          startTime4=game.step;
-          Next4=game.step+300;
-        }
-        area4=area4+1
-        customObj();
-        }
-        if (game.ships[i].type==607) {
-        game.ships[i].set({x:250,y:-250});
-        }
-      }
-    }
-  }
-  if (game.step%10===0)                         //check for missed area3 asteroids
-  {
-    for (var k=0;k<game.asteroids.length;k++)
-    {
-      if (game.asteroids[k].x<-330)
-      {
-        game.asteroids[k].set({kill:true})
-        if (area3!=0)
-        {
-          for (var l=0;l<a3ship.length;l++) {
-            if (game.ships[a3ship[l]].shield>50)
-            {
-              game.ships[a3ship[l]].set({shield:game.ships[a3ship[l]].shield-50})
-            }
-            else
-            {
-              game.ships[a3ship[l]].set({kill:true})
-              Next3=1
-            }
-          }
-        }
-      }
-    }
-  }
-  if (game.step%60==15)
-  {
-    for (var k=0;k<game.aliens.length;k++)        //kill ob aliens
-    {
-    game.aliens[k].set({regen:0,damage:84,laser_speed:100});
-      if (((((game.aliens[k].x-250)*(game.aliens[k].x-250))+((game.aliens[k].y-250)*(game.aliens[k].y-250))))>=10000)
-      {
-      game.aliens[k].set({kill:true});
-      }
-    }
-  }
-  if (game.step%60===0)                           //display ship type
-  {
-    for (var j=0;j<game.ships.length;j++)
-    {
-      sendUI(game.ships[j], {
-      id: "shiptype",
-      position: [2.5,28,15,10],
-      visible: true,
-      components: [
-      {type: "text",position:[0,0,100,50],value:(`Current Ship: `+(shipnames[game.ships[j].type-601])),color:"#cde"},
-      ]
-    });
-    }
-  }
-  if (game.step%10===0)                           //gem cap
-  {
-    for (var j=0;j<game.ships.length;j++)
-    {
-      if (game.ships[j].crystals>719)
-      {
-        game.ships[j].set({crystals:719});
-      }
-    }
-  }
-  // if (game.step%10===0){
-  //   if (((game.ships[0].x-game.aliens[0].x)*(game.ships[0].x-game.aliens[0].x))+((game.ships[0].y-game.aliens[0].y)*(game.ships[0].y-game.aliens[0].y))<100) {
-  //     let vx=1
-  //     let vy=1
-  //   }
-  // }
-  if (game.step==COD)                             //delayed obj reset
-  {
-    shipCount();
-    customObj();
-  }
-  if (game.step==rerem)
-  {
-    remAst4();
-  }
-};
+// this.tick = function(game) {
+//   //set initial objects
+//   if (game.step%60===0)
+//   {
+//     // echo("GameStep:"+game.step)
+//     // echo("Next3:"+Next3)
+//     // echo("Next4:"+Next4)
+//     // echo("rerem:"+rerem)
+//   }
+//   if (game.step==60)
+//   {
+//     customObj();
+//     echo(emote1);
+//     echo(emote2);
+//     echo(emote3);
+//     echo(emote4);
+//   }
+//   if (game.step>=150 && area4>0 && game.step==Next4)  //create new asteroid in area 4
+//   {
+//     newCircle();
+//   }
+//   if (game.step>=150 && area3>0 && game.step==Next3)  //create new asteroid in area 3
+//   {
+//     newLine();
+//   }
+//   if (game.step%120===0)
+//   {
+//     shipCount();
+//     if (duelA==2 && area1==2)                   //start duel
+//     {
+//       angle=360*Math.random();
+//       game.ships[a1ships[0]].set({x:(85*Math.cos(angle)-245),y:(85*Math.sin(angle)+245),invulnerable:60,shield:999,crystals:720});
+//       game.ships[a1ships[1]].set({x:(85*Math.cos(angle-180)-245),y:(85*Math.sin(angle-180)+245),invulnerable:60,shield:999,crystals:720});
+//       duelA=3;
+//     }
+//     if (duelA==3 && area1!=2)                   //mark duel started
+//     {
+//       duelA=2;
+//     }
+//     for (var i=0;i<game.ships.length;i++)       //install buttons
+//     {
+//       var ship = game.ships[i] ;
+//       if (!ship.custom.Regen_button_installed)
+//       {
+//         ship.custom.Regen_button_installed = true;
+//         ship.setUIComponent(Regen_button);
+//       }
+//       if (!ship.custom.A_Speed_button_installed)
+//       {
+//         ship.custom.A_Speed_button_installed = true;
+//         ship.setUIComponent(A_Speed_button);
+//       }
+//       if (!ship.custom.Return_button_installed)
+//       {
+//         ship.custom.Return_button_installed = true;
+//         ship.setUIComponent(Return_button);
+//       }
+//       if (!ship.custom.KillA_button_installed)
+//       {
+//         ship.custom.KillA_button_installed = true;
+//         ship.setUIComponent(KillA_button);
+//       }
+//       if (!ship.custom.spectate_button_installed)
+//       {
+//         ship.custom.spectate_button_installed = true;
+//         ship.setUIComponent(spectate_button);
+//       }                                                 //move from lobby to outside
+//       if (((((game.ships[i].x-50)*(game.ships[i].x-50))+((game.ships[i].y-50)*(game.ships[i].y-50))))<=100)
+//       {
+//         //area2
+//         if (area2<a2cap) {
+//         game.ships[i].set({x:250,y:250,invulnerable:300});
+//         game.aliens[0].set({regen:0,shield:1020,damage:84,laser_speed:205});
+//         area2=area2+1
+//         customObj();
+//         }
+//       }
+//       if (((((game.ships[i].x+50)*(game.ships[i].x+50))+((game.ships[i].y+50)*(game.ships[i].y+50))))<=100)
+//       {
+//         //area 3
+//         if (area3<a3cap && game.ships[i].type!=607) {
+//         remAst3();
+//         game.ships[i].set({x:-250,y:-250,invulnerable:300,score:0,crystals:0,type:(game.ships[i].type+3),stats:88888888,shield:300});
+//         a3ship=a3ship+[i]
+//         if (area3===0)
+//         {
+//           a3ship=[i];
+//           startTime3=game.step;
+//           Next3=game.step+300;
+//         }
+//         area3=area3+1
+//         customObj();
+//         }
+//         if (game.ships[i].type==607) {
+//         game.ships[i].set({x:-250,y:-250});
+//         }
+//       }
+//       if (((((game.ships[i].x+50)*(game.ships[i].x+50))+((game.ships[i].y-50)*(game.ships[i].y-50))))<=100)
+//       {
+//         //area1
+//         if (area1<a1cap) {
+//         game.ships[i].set({x:-250,y:250,invulnerable:300});
+//         area1=area1+1
+//         customObj();
+//         }
+//       }
+//       if (((((game.ships[i].x-50)*(game.ships[i].x-50))+((game.ships[i].y+50)*(game.ships[i].y+50))))<=100)
+//       {
+//         //area4
+//         if (area4<a4cap && game.ships[i].type!=607) {
+//         remAst4();
+//         game.ships[i].set({x:250,y:-250,invulnerable:300,score:0,crystals:0,type:(game.ships[i].type+3),stats:88888888,shield:300});
+//         a4ship=a4ship+[i]
+//         if (area4===0)
+//         {
+//           a4ship=[i];
+//           startTime4=game.step;
+//           Next4=game.step+300;
+//         }
+//         area4=area4+1
+//         customObj();
+//         }
+//         if (game.ships[i].type==607) {
+//         game.ships[i].set({x:250,y:-250});
+//         }
+//       }
+//     }
+//   }
+//   if (game.step%10===0)                         //check for missed area3 asteroids
+//   {
+//     for (var k=0;k<game.asteroids.length;k++)
+//     {
+//       if (game.asteroids[k].x<-330)
+//       {
+//         game.asteroids[k].set({kill:true})
+//         if (area3!=0)
+//         {
+//           for (var l=0;l<a3ship.length;l++) {
+//             if (game.ships[a3ship[l]].shield>50)
+//             {
+//               game.ships[a3ship[l]].set({shield:game.ships[a3ship[l]].shield-50})
+//             }
+//             else
+//             {
+//               game.ships[a3ship[l]].set({kill:true})
+//               Next3=1
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+//   if (game.step%60==15)
+//   {
+//     for (var k=0;k<game.aliens.length;k++)        //kill ob aliens
+//     {
+//     game.aliens[k].set({regen:0,damage:84,laser_speed:100});
+//       if (((((game.aliens[k].x-250)*(game.aliens[k].x-250))+((game.aliens[k].y-250)*(game.aliens[k].y-250))))>=10000)
+//       {
+//       game.aliens[k].set({kill:true});
+//       }
+//     }
+//   }
+//   if (game.step%60===0)                           //display ship type
+//   {
+//     for (var j=0;j<game.ships.length;j++)
+//     {
+//       sendUI(game.ships[j], {
+//       id: "shiptype",
+//       position: [2.5,28,15,10],
+//       visible: true,
+//       components: [
+//       {type: "text",position:[0,0,100,50],value:(`Current Ship: `+(shipnames[game.ships[j].type-601])),color:"#cde"},
+//       ]
+//     });
+//     }
+//   }
+//   if (game.step%10===0)                           //gem cap
+//   {
+//     for (var j=0;j<game.ships.length;j++)
+//     {
+//       if (game.ships[j].crystals>719)
+//       {
+//         game.ships[j].set({crystals:719});
+//       }
+//     }
+//   }
+//   // if (game.step%10===0){
+//   //   if (((game.ships[0].x-game.aliens[0].x)*(game.ships[0].x-game.aliens[0].x))+((game.ships[0].y-game.aliens[0].y)*(game.ships[0].y-game.aliens[0].y))<100) {
+//   //     let vx=1
+//   //     let vy=1
+//   //   }
+//   // }
+//   if (game.step==COD)                             //delayed obj reset
+//   {
+//     shipCount();
+//     customObj();
+//   }
+//   if (game.step==rerem)
+//   {
+//     remAst4();
+//   }
+// };
 
-this.event = function(event,game) {
-  let ship = event.ship;
-  let killer = event.killer;
-  let ast = event.asteroid;
-  switch (event.name){
-    case "ui_component_clicked":
-      var component = event.id ;
-      if (component == "Regen")
-      {
-        Regen(ship);
-      }
-      if (component == "A_Speed")
-      {
-        A_Speed(ship);
-      }
-      if (component == "Return")
-      {
-        Return(ship);
-      }
-      if (component == "KillA")
-      {
-        KillA(ship);
-      }
-      if (component == "spectate")
-      {
-        Spectate(ship);
-      }
-      break ;
-    case "ship_spawned":
-      echo("new spawn");
-      ship.set({x:0,y:0,type:601, stats:88888888, crystals:720, shield: 1000});
-      shipCount();
-      customObj();
-      break ;
-    case "asteroid_destroyed":
-      killer.set({score:killer.score+1000});
-      break ;
-    case "ship_destroyed":
-      echo("new death");
-      if ((((ship.x-250)*(ship.x-250))+((ship.y+250)*(ship.y+250)))<=12100)
-      {
-        area4=area4-1
-        Next4=-1
-        if (area4===0)
-        {
-          remAst4();
-          rerem=game.step+30
-          a4ship=[]
-        }
-      }
-      if ((((ship.x+250)*(ship.x+250))+((ship.y+250)*(ship.y+250)))<=12100)
-      {
-        area3=area3-1
-        Next3=-1
-        if (area3===0)
-        {
-          remAst3();
-          a3ship=[]
-        }
-      }
-      shipCount();
-      customObj();
-      break;
-  }
-} ;
+// this.event = function(event,game) {
+//   let ship = event.ship;
+//   let killer = event.killer;
+//   let ast = event.asteroid;
+//   switch (event.name){
+//     case "ui_component_clicked":
+//       var component = event.id ;
+//       if (component == "Regen")
+//       {
+//         Regen(ship);
+//       }
+//       if (component == "A_Speed")
+//       {
+//         A_Speed(ship);
+//       }
+//       if (component == "Return")
+//       {
+//         Return(ship);
+//       }
+//       if (component == "KillA")
+//       {
+//         KillA(ship);
+//       }
+//       if (component == "spectate")
+//       {
+//         Spectate(ship);
+//       }
+//       break ;
+//     case "ship_spawned":
+//       echo("new spawn");
+//       ship.set({x:0,y:0,type:601, stats:88888888, crystals:720, shield: 1000});
+//       shipCount();
+//       customObj();
+//       break ;
+//     case "asteroid_destroyed":
+//       killer.set({score:killer.score+1000});
+//       break ;
+//     case "ship_destroyed":
+//       echo("new death");
+//       if ((((ship.x-250)*(ship.x-250))+((ship.y+250)*(ship.y+250)))<=12100)
+//       {
+//         area4=area4-1
+//         Next4=-1
+//         if (area4===0)
+//         {
+//           remAst4();
+//           rerem=game.step+30
+//           a4ship=[]
+//         }
+//       }
+//       if ((((ship.x+250)*(ship.x+250))+((ship.y+250)*(ship.y+250)))<=12100)
+//       {
+//         area3=area3-1
+//         Next3=-1
+//         if (area3===0)
+//         {
+//           remAst3();
+//           a3ship=[]
+//         }
+//       }
+//       shipCount();
+//       customObj();
+//       break;
+//   }
+// } ;
