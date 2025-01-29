@@ -487,53 +487,53 @@ var newLine = function()
 }
 
 //objects
-var redX = {
-  id: "redX",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/redX.obj",
-  emissiveColor: 0xFF0000
-};
+// var redX = {
+//   id: "redX",
+//   obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/redX.obj",
+//   emissiveColor: 0xFF0000
+// };
 
-var greenY = {
-  id: "greenY",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/greenY.obj",
-  emissiveColor: 0x00FF00
-};
+// var greenY = {
+//   id: "greenY",
+//   obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/greenY.obj",
+//   emissiveColor: 0x00FF00
+// };
   
-var blocked = {
-  id: "blocked",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/blocked.obj",
-  emissiveColor: 0xF0F0FF
-};
+// var blocked = {
+//   id: "blocked",
+//   obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/blocked.obj",
+//   emissiveColor: 0xF0F0FF
+// };
 
-var startArea = {
-  id: "startArea",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/startArea.obj",
-  emissiveColor: 0xFF9900
-}
+// var startArea = {
+//   id: "startArea",
+//   obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/startArea.obj",
+//   emissiveColor: 0xFF9900
+// }
 
-var endArea = {
-  id: "endArea",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/endArea.obj",
-  emissiveColor: 0xFF0000
-}
+// var endArea = {
+//   id: "endArea",
+//   obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/endArea.obj",
+//   emissiveColor: 0xFF0000
+// }
 
-var center = {
-  id: "center",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/Center_Base2.obj",
-  emissiveColor: 0xF0F0FF
-};
+// var center = {
+//   id: "center",
+//   obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/Center_Base2.obj",
+//   emissiveColor: 0xF0F0FF
+// };
 
-var desc4 = {
-  id: "desc4",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/desc4.obj",
-  emissiveColor: 0xF0F0FF
-}
+// var desc4 = {
+//   id: "desc4",
+//   obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/desc4.obj",
+//   emissiveColor: 0xF0F0FF
+// }
 
-var desc3 = {
-  id: "desc3",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/desc3.obj",
-  emissiveColor: 0xF0F0FF
-}
+// var desc3 = {
+//   id: "desc3",
+//   obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/desc3.obj",
+//   emissiveColor: 0xF0F0FF
+// }
 
 
 
