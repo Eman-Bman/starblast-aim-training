@@ -150,7 +150,9 @@ this.options = {
   radar_zoom: 1,
   weapons_store: false,
   asteroids_strength: 6,
-  starting_ship:800,
+  starting_ship:800,  
+  ships: ships,
+  reset_tree:true,
   map_size: 80
 };
 
