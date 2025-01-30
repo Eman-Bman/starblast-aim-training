@@ -141,50 +141,50 @@ map=
 "                                                                                \n"+
 "                                                                                ";
 
-const VOCABULARY = [
-    // 1
-    {text: "You",       icon: "\u004e", key: "O"},
-    {text: "Me",        icon: "\u004f", key: "E"},
-    {text: "Hmm",       icon: "\u004b", key: "Q"},
-    {text: "Yes",       icon: "\u004c", key: "Y"},
-    // 2
-    {text: "No",        icon: "\u004d", key: "N"},
-    {text: "Hello",     icon: "\u0045", key: "H"},
-    {text: "Sorry",     icon: "\u00a1", key: "S"},
-    {text: "Attack",    icon: "\u0049", key: "A"},
-    // 3
-    {text: "Follow Me", icon: "\u0050", key: "F"},
-    {text: "Good Game", icon: "\u00a3", key: "G"},
-    {text: "thousand", icon: "\u{1D660}", key: "K"},
-    {text: "High Score",icon: "\u002e", key: "I"},
-    // 4
-    {text: "Random#1",    icon: emote1, key: "L"},
-    {text: "Discord",    icon: "\u007b", key:"Z"},
-    {text: "Random#3",    icon: emote3, key:"X"},
-    {text: "Random#4",    icon: emote4, key:"P"},
-    // 5
-    {text: "Duel Area",     icon: "\u00be", key: "D"},
-    {text: "Alien Area",    icon: "\u0030", key: "M"},
-    {text: "Tunnel Area",   icon: "\u0062", key: "B"},
-    {text: "Circle Area",   icon: "\u23E3", key: "J"},
-    // 6
-    {text: "",   icon: "\u{1D7CF}", key: "1"},
-    {text: "",   icon: "\u{1D7D0}", key: "2"},
-    {text: "",   icon: "\u{1D7D1}", key: "3"},
-    {text: "",   icon: "\u{1D7D2}", key: "4"},
-    // 7
-    {text: "",   icon: "\u{1D7D3}", key: "5"},
-    {text: "",   icon: "\u{1D7D4}", key: "6"},
-    {text: "",   icon: "\u{1D7D5}", key: "7"},
-    {text: "",   icon: "\u{1D7D6}", key: "8"},
-    // 8
-    {text: "",   icon: "\u{1D7D7}", key: "9"},
-    {text: "",   icon: "\u{1D7CE}", key: "0"}
-];
+// const VOCABULARY = [
+//     // 1
+//     {text: "You",       icon: "\u004e", key: "O"},
+//     {text: "Me",        icon: "\u004f", key: "E"},
+//     {text: "Hmm",       icon: "\u004b", key: "Q"},
+//     {text: "Yes",       icon: "\u004c", key: "Y"},
+//     // 2
+//     {text: "No",        icon: "\u004d", key: "N"},
+//     {text: "Hello",     icon: "\u0045", key: "H"},
+//     {text: "Sorry",     icon: "\u00a1", key: "S"},
+//     {text: "Attack",    icon: "\u0049", key: "A"},
+//     // 3
+//     {text: "Follow Me", icon: "\u0050", key: "F"},
+//     {text: "Good Game", icon: "\u00a3", key: "G"},
+//     {text: "thousand", icon: "\u{1D660}", key: "K"},
+//     {text: "High Score",icon: "\u002e", key: "I"},
+//     // 4
+//     {text: "Random#1",    icon: emote1, key: "L"},
+//     {text: "Discord",    icon: "\u007b", key:"Z"},
+//     {text: "Random#3",    icon: emote3, key:"X"},
+//     {text: "Random#4",    icon: emote4, key:"P"},
+//     // 5
+//     {text: "Duel Area",     icon: "\u00be", key: "D"},
+//     {text: "Alien Area",    icon: "\u0030", key: "M"},
+//     {text: "Tunnel Area",   icon: "\u0062", key: "B"},
+//     {text: "Circle Area",   icon: "\u23E3", key: "J"},
+//     // 6
+//     {text: "",   icon: "\u{1D7CF}", key: "1"},
+//     {text: "",   icon: "\u{1D7D0}", key: "2"},
+//     {text: "",   icon: "\u{1D7D1}", key: "3"},
+//     {text: "",   icon: "\u{1D7D2}", key: "4"},
+//     // 7
+//     {text: "",   icon: "\u{1D7D3}", key: "5"},
+//     {text: "",   icon: "\u{1D7D4}", key: "6"},
+//     {text: "",   icon: "\u{1D7D5}", key: "7"},
+//     {text: "",   icon: "\u{1D7D6}", key: "8"},
+//     // 8
+//     {text: "",   icon: "\u{1D7D7}", key: "9"},
+//     {text: "",   icon: "\u{1D7CE}", key: "0"}
+// ];
 
 this.options = {
   soundtrack: "argon.mp3",
-  root_mode: "survival",
+  root_mode: "",
   map_name: "Aim Training V1.1.2",
   //custom_map: map,
   //vocabulary: VOCABULARY,
