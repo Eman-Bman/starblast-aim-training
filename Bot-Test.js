@@ -183,9 +183,19 @@ const VOCABULARY = [
 ];
 
 this.options = {
-  // see documentation for options reference
-  root_mode: "survival",
-  map_size: 30
+  soundtrack: "argon.mp3",
+  root_mode: "",
+  map_name: "Aim Training V1.1.2",
+  custom_map: map,
+  vocabulary: VOCABULARY,
+  lives: 5,
+  radar_zoom: 1,
+  weapons_store: false,
+  asteroids_strength: 6,
+  starting_ship:800,
+  ships: ships,
+  reset_tree:true,
+  map_size: 80
 };
 
 this.tick = function(game) {
