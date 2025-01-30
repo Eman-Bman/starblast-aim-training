@@ -184,7 +184,7 @@ const VOCABULARY = [
 
 this.options = {
   soundtrack: "argon.mp3",
-  root_mode: "",
+  root_mode: "survival",
   map_name: "Aim Training V1.1.2",
   //custom_map: map,
   //vocabulary: VOCABULARY,
