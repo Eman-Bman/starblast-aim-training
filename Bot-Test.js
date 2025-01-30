@@ -60,9 +60,15 @@ let a3high=[0,"N/A"];
 let a4high=[0,"N/A"];
 
 this.options = {
-  // see documentation for options reference
-  root_mode: "survival",
-  map_size: 30
+  soundtrack: "argon.mp3",
+  root_mode: "",
+  map_name: "Aim Training V1.1.2",
+  lives: 5,
+  radar_zoom: 1,
+  weapons_store: false,
+  asteroids_strength: 6,
+  starting_ship:800,
+  map_size: 80
 };
 
 this.tick = function(game) {
