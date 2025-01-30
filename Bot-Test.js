@@ -548,6 +548,7 @@ this.options = {
   weapons_store: false,
   asteroids_strength: 6,
   starting_ship:800,
+  ships: ships,
   map_size: 80
 };
 
