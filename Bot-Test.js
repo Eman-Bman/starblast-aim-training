@@ -193,8 +193,8 @@ this.options = {
   weapons_store: false,
   asteroids_strength: 6,
   starting_ship:800,
-  ships: ships,
-  reset_tree:true,
+  //ships: ships,
+  //reset_tree:true,
   map_size: 80
 };
 
