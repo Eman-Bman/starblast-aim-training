@@ -181,6 +181,7 @@ let emote1="\u{1F913}";
 let emote2="\u{1F928}";
 let emote3="\u{1F97A}";
 let emote4="\u{1F389}";
+let gemcaps=[19,79,179,319,499,719,979];
 emote1=String.fromCodePoint((127744+Math.floor(Math.random()*837)).toString(10));
 emote2=String.fromCodePoint((127744+Math.floor(Math.random()*837)).toString(10));
 emote3=String.fromCodePoint((127744+Math.floor(Math.random()*837)).toString(10));
@@ -411,7 +412,7 @@ var A_Speed = function(ship) {
   if (((ship.x*ship.x)+(ship.y*ship.y))<=8100 && ship.type!=623)
   {
     ship.set({type: (ship.type - ship.type.toString().charAt(0)*100) % tiersize[ship.type.toString().charAt(0)-1] + ship.type.toString().charAt(0)*100 + 1});
-    ship.set({stats:88888888, crystals:719, generator: 1000, shield: 1000});
+    ship.set({stats:88888888, crystals:gemcaps[ship.type.toString().charAt(0)*1-1], generator: 1000, shield: 1000, x:0, y:0});
   }
 };
 
@@ -421,7 +422,7 @@ var Return = function(ship) {
     ship.set({type:(ship.type-tiersize[ship.type.toString().charAt(0)-1])});
   }
   //ship.set({type:605});
-  ship.set({x:0,y:0,vx:0,vy:0,shield:3000,stats:88888888,crystals:719});
+  ship.set({x:0,y:0,vx:0,vy:0,shield:3000,stats:88888888,crystals:gemcaps[ship.type.toString().charAt(0)*1-1]});
   shipCount();
   COD=game.step+30;
 };
@@ -429,7 +430,7 @@ var Return = function(ship) {
 var Spectate = function(ship) {
   if (ship.type==623)
   {
-    ship.set({x:0,y:0,type:609,vx:0,vy:0,shield:999,stats:88888888,crystals:719,collider:true});
+    ship.set({x:0,y:0,type:609,vx:0,vy:0,shield:999,stats:88888888,crystals:980,collider:true});
   }
   else
   {
@@ -443,10 +444,10 @@ var Spectate = function(ship) {
 var Tier = function(ship) {
   if (((ship.x*ship.x)+(ship.y*ship.y))<=8100 && ship.type!=623) {
     if (ship.type<700) {
-      ship.set({x:0,y:0,type:(ship.type.toString().charAt(0)*1+1)*100+1,vx:0,vy:0,shield:999,stats:88888888,crystals:719,collider:true});
+      ship.set({x:0,y:0,type:(ship.type.toString().charAt(0)*1+1)*100+1,vx:0,vy:0,shield:999,stats:88888888,crystals:980,collider:true});
     }
     else {
-      ship.set({x:0,y:0,type:101,vx:0,vy:0,shield:999,stats:88888888,crystals:719,collider:true});
+      ship.set({x:0,y:0,type:101,vx:0,vy:0,shield:999,stats:88888888,crystals:980,collider:true});
     }
   }
 };
@@ -893,9 +894,9 @@ this.tick = function(game) {
   {
     for (var j=0;j<game.ships.length;j++)
     {
-      if (game.ships[j].crystals>719)
+      if (game.ships[j].crystals>gemcaps[game.ships[j].type.toString().charAt(0)*1-1])
       {
-        game.ships[j].set({crystals:719});
+        game.ships[j].set({crystals:gemcaps[game.ships[j].type.toString().charAt(0)*1-1]});
       }
     }
   }
