@@ -672,7 +672,7 @@ var endArea = {
 
 var center = {
   id: "center",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/Center_Base2.obj",
+  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/Center_Base3.obj",
   emissiveColor: 0xF0F0FF
 };
 
