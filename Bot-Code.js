@@ -694,7 +694,7 @@ var desc3 = {
 this.options = {
   soundtrack: "argon.mp3",
   root_mode: "",
-  map_name: "Aim Training V1.2.0",
+  map_name: "Aim Training V1.2b",
   custom_map: map,
   vocabulary: VOCABULARY,
   speed_mod: 1.2,
@@ -887,7 +887,23 @@ this.tick = function(game) {
       components: [
       {type: "text",position:[0,0,100,50],value:(`Current Ship: `+(shipnames[game.ships[j].type-601])),color:"#cde"},
       ]
-    });
+      });
+      sendUI(game.ships[j], {
+      id: "a4high",
+      position: [2.5,32,15,10],
+      visible: true,
+      components: [
+      {type: "text",position:[0,0,100,50],value:(`Circle HS: `+(a4high[0])+`, Set By: `+(a4high[1])),color:"#cde"},
+      ]
+      });
+      sendUI(game.ships[j], {
+      id: "a3high",
+      position: [2.5,32,15,10],
+      visible: true,
+      components: [
+      {type: "text",position:[0,0,100,50],value:(`Tunnel HS: `+(a3high[0])+`, Set By: `+(a3high[1])),color:"#cde"},
+      ]
+      });
     }
   }
   if (game.step%10===0)                           //gem cap
@@ -969,6 +985,10 @@ this.event = function(event,game) {
           remAst4();
           rerem=game.step+30
           a4ship=[]
+          if (a4high[0]<ship.score) {
+            a4high[0]=ship.score
+            a4high[1]=ship.name
+          }
         }
       }
       if ((((ship.x+250)*(ship.x+250))+((ship.y+250)*(ship.y+250)))<=12100)
@@ -979,6 +999,10 @@ this.event = function(event,game) {
         {
           remAst3();
           a3ship=[]
+          if (a3high[0]<ship.score) {
+            a3high[0]=ship.score
+            a3high[1]=ship.name
+          }
         }
       }
       shipCount();
