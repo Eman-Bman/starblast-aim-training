@@ -898,7 +898,7 @@ this.tick = function(game) {
       });
       sendUI(game.ships[j], {
       id: "a3high",
-      position: [2.5,32,15,10],
+      position: [2.5,36,15,10],
       visible: true,
       components: [
       {type: "text",position:[0,0,100,50],value:(`Tunnel HS: `+(a3high[0])+`, Set By: `+(a3high[1])),color:"#cde"},
