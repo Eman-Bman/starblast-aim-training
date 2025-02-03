@@ -558,16 +558,16 @@ var customObj = function()
   type: startArea,
   position: {x:-160,y:-245,z:0},
   rotation: {x:0,y:0,z:0},
-  scale: {x:1,y:1,z:1}
+  scale: {x:20,y:30,z:1}
   }) ;
   
-  // game.setObject({
-  // id: "endArea",
-  // type: endArea,
-  // position: {x:-335,y:-245,z:0},
-  // rotation: {x:0,y:0,z:0},
-  // scale: {x:10,y:30,z:1}
-  // }) ;
+  game.setObject({
+  id: "endArea",
+  type: endArea,
+  position: {x:-335,y:-245,z:0},
+  rotation: {x:0,y:0,z:0},
+  scale: {x:10,y:30,z:1}
+  }) ;
   
   // game.setObject({
   // id: "desc4",
@@ -661,8 +661,8 @@ var blocked = {
 
 var startArea = {
   id: "startArea",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/startArea.obj",
-  emissiveColor: 0xFF9900
+  obj: "https://starblast.data.neuronality.com/mods/objects/plane.obj",
+  emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG4.png"
 }
 
 var endArea = {
