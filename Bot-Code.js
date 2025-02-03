@@ -549,7 +549,7 @@ var customObj = function()
   id: "center",
   type: center,
   position: {x:0,y:0,z:0},
-  rotation: {x:0,y:0,z:0},
+  rotation: {x:3.141592,y:0,z:0},
   scale: {x:120,y:120,z:1}
   }) ;
   
@@ -561,29 +561,29 @@ var customObj = function()
   scale: {x:1,y:1,z:1}
   }) ;
   
-  game.setObject({
-  id: "endArea",
-  type: endArea,
-  position: {x:-335,y:-245,z:0},
-  rotation: {x:0,y:0,z:0},
-  scale: {x:1,y:1,z:1}
-  }) ;
+  // game.setObject({
+  // id: "endArea",
+  // type: endArea,
+  // position: {x:-335,y:-245,z:0},
+  // rotation: {x:0,y:0,z:0},
+  // scale: {x:10,y:30,z:1}
+  // }) ;
   
-  game.setObject({
-  id: "desc4",
-  type: desc4,
-  position: {x:30,y:-45,z:-1},
-  rotation: {x:0,y:0,z:0},
-  scale: {x:0.2,y:0.2,z:0.01}
-  }) ;
+  // game.setObject({
+  // id: "desc4",
+  // type: desc4,
+  // position: {x:30,y:-45,z:-1},
+  // rotation: {x:0,y:0,z:0},
+  // scale: {x:0.2,y:0.2,z:0.01}
+  // }) ;
   
-  game.setObject({
-  id: "desc3",
-  type: desc3,
-  position: {x:-30,y:-45,z:-1},
-  rotation: {x:0,y:0,z:0},
-  scale: {x:0.2,y:0.2,z:0.01}
-  }) ;
+  // game.setObject({
+  // id: "desc3",
+  // type: desc3,
+  // position: {x:-30,y:-45,z:-1},
+  // rotation: {x:0,y:0,z:0},
+  // scale: {x:0.2,y:0.2,z:0.01}
+  // }) ;
   
   if (area1>(a1cap-1))
   {
@@ -592,7 +592,7 @@ var customObj = function()
     type: blocked,
     position: {x:-50,y:50,z:0},
     rotation: {x:0,y:0,z:0},
-    scale: {x:1,y:1,z:1}
+    scale: {x:20,y:20,z:1}
     }) ;
   }
   
@@ -603,7 +603,7 @@ var customObj = function()
     type: blocked,
     position: {x:50,y:50,z:0},
     rotation: {x:0,y:0,z:0},
-    scale: {x:1,y:1,z:1}
+    scale: {x:20,y:20,z:1}
     }) ;
   }
   
@@ -614,7 +614,7 @@ var customObj = function()
     type: blocked,
     position: {x:-50,y:-50,z:0},
     rotation: {x:0,y:0,z:0},
-    scale: {x:1,y:1,z:1}
+    scale: {x:20,y:20,z:1}
     }) ;
   }
 
@@ -625,7 +625,7 @@ var customObj = function()
     type: blocked,
     position: {x:50,y:-50,z:0},
     rotation: {x:0,y:0,z:0},
-    scale: {x:1,y:1,z:1}
+    scale: {x:20,y:20,z:1}
     }) ;
   }
 };
@@ -655,8 +655,8 @@ var greenY = {
   
 var blocked = {
   id: "blocked",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/blocked.obj",
-  emissiveColor: 0xF0F0FF
+  obj: "https://starblast.data.neuronality.com/mods/objects/plane.obj",
+  emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG2.png"
 };
 
 var startArea = {
@@ -667,15 +667,14 @@ var startArea = {
 
 var endArea = {
   id: "endArea",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/endArea.obj",
-  emissiveColor: 0xFF0000
+  obj: "https://starblast.data.neuronality.com/mods/objects/plane.obj",
+  emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG3.png"
 }
 
 var center = {
   id: "center",
   obj: "https://starblast.data.neuronality.com/mods/objects/plane.obj",
   emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG1.png"
-  //emissive: "https://raw.githubusercontent.com/halcyonXT/project-storage/main/LATEST.png"
 };
 
 var desc4 = {
