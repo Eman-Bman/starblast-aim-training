@@ -176,7 +176,7 @@ let alienup=2;
 let duelA=2;
 let COD=-1;
 let tiersize=[1,2,4,6,8,11,4]
-let shipnames=["Advanced Fighter","Scorpion","Marauder","Condor","Rock Tower","H-Mercury","Barracuda","O-Defender","A-Speed (Current)","A-Speed (New)","A-Speed (Legacy)","Advanced Fighter","Scorpion","Marauder","Condor","Rock Tower","H-Mercury","Barracuda","O-Defender","A-Speed (Current)","A-Speed (New)","A-Speed (Legacy)","Spectator"];
+let shipnames6=["Advanced Fighter","Scorpion","Marauder","Condor","Rock Tower","H-Mercury","Barracuda","O-Defender","A-Speed (Current)","A-Speed (New)","A-Speed (Legacy)","Advanced Fighter","Scorpion","Marauder","Condor","Rock Tower","H-Mercury","Barracuda","O-Defender","A-Speed (Current)","A-Speed (New)","A-Speed (Legacy)","Spectator"];
 let emote1="\u{1F913}";
 let emote2="\u{1F928}";
 let emote3="\u{1F97A}";
@@ -550,7 +550,7 @@ var customObj = function()
   type: center,
   position: {x:0,y:0,z:0},
   rotation: {x:0,y:0,z:0},
-  scale: {x:1,y:1,z:1}
+  scale: {x:120,y:120,z:1}
   }) ;
   
   game.setObject({
@@ -673,8 +673,9 @@ var endArea = {
 
 var center = {
   id: "center",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/Center_Base3.obj",
-  emissiveColor: 0xF0F0FF
+  obj: "https://starblast.data.neuronality.com/mods/objects/plane.obj",
+  emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG1.png"
+  //emissive: "https://raw.githubusercontent.com/halcyonXT/project-storage/main/LATEST.png"
 };
 
 var desc4 = {
@@ -694,7 +695,7 @@ var desc3 = {
 this.options = {
   soundtrack: "argon.mp3",
   root_mode: "",
-  map_name: "Aim Training V1.2b",
+  map_name: "Aim Training V1.2.3",
   custom_map: map,
   vocabulary: VOCABULARY,
   speed_mod: 1.2,
@@ -885,7 +886,7 @@ this.tick = function(game) {
       position: [2.5,28,15,10],
       visible: true,
       components: [
-      {type: "text",position:[0,0,100,50],value:(`Current Ship: `+(shipnames[game.ships[j].type-601])),color:"#cde"},
+      {type: "text",position:[0,0,100,50],value:(`Current Ship: `+(shipnames6[game.ships[j].type-601])),color:"#cde"},
       ]
       });
       sendUI(game.ships[j], {
