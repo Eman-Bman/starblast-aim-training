@@ -506,37 +506,19 @@ var arenaExt = function() {
   {
     if (game.ships[i].type!=623)
     {
-      if (((((game.ships[i].x-250)*(game.ships[i].x-250))+((game.ships[i].y+250)*(game.ships[i].y+250))))<=10000)
+      let d=((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250))))
+      if (d<=40000 && d>=10000)
       {
-        // area4=area4+1;
-      }
-      else if (((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y+250)*(game.ships[i].y+250))))<=10000)
-      {
-        // area3=area3+1;
-      }
-      else if (((((game.ships[i].x-250)*(game.ships[i].x-250))+((game.ships[i].y-250)*(game.ships[i].y-250))))<=10000)
-      {
-        // area2=area2+1;
-      }
-      else if (((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250))))<=10000)
-      {
-        // area1=area1+1;
-        // a1ships.push(i);
-      }
-      else if (((((game.ships[i].x)*(game.ships[i].x))+((game.ships[i].y)*(game.ships[i].y))))<=5100) {
-        
-      }
-      else {
-        if (game.ships[i].shield>(Math.sqrt(((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250))))))-100) {
-          game.ships[i].set({shield: game.ships[i].shield - (Math.sqrt(((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250)))))-100)})
+        if (game.ships[i].shield>(Math.sqrt(d)-100)) {
+          game.ships[i].set({shield: game.ships[i].shield - (Math.sqrt(d)-100)})
         }
-        else if (game.ships[i].crystals>(Math.sqrt(((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250))))))-100) {
-          game.ships[i].set({shield: 0, crystals: game.ships[i].crystals - (Math.sqrt(((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250)))))-100)})
+        else if (game.ships[i].crystals>(Math.sqrt(d)-100)) {
+          game.ships[i].set({shield: 0, crystals: game.ships[i].crystals - (Math.sqrt(d)-100)})
         }
         else {
           game.ships[i].set({kill:true})
         }
-        echo((Math.sqrt(((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250))))))-100)
+        // echo((Math.sqrt(((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250))))))-100)
       }
     }
   }
