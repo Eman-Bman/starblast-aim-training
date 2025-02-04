@@ -6,7 +6,6 @@ let a2cap=20;
 let a3cap=20;
 let a4cap=20;
 
-
 //code:
 let ships=[];
 
@@ -509,16 +508,30 @@ var arenaExt = function() {
       let d=((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250))))
       if (d<=40000 && d>=10000)
       {
-        if (game.ships[i].shield>(Math.sqrt(d)-100)) {
-          game.ships[i].set({shield: game.ships[i].shield - (Math.sqrt(d)-100)})
-        }
-        else if (game.ships[i].crystals>(Math.sqrt(d)-100)) {
-          game.ships[i].set({shield: 0, crystals: game.ships[i].crystals - (Math.sqrt(d)-100)})
+        //damage mode
+        // if (game.ships[i].shield>(Math.sqrt(d)-100)) {
+        //   game.ships[i].set({shield: game.ships[i].shield - (Math.sqrt(d)-100)})
+        // }
+        // else if (game.ships[i].crystals>(Math.sqrt(d)-100)) {
+        //   game.ships[i].set({shield: 0, crystals: game.ships[i].crystals - (Math.sqrt(d)-100)})
+        // }
+        // else {
+        //   game.ships[i].set({kill:true})
+        // }
+        // echo((Math.sqrt(((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250))))))-100)
+        //push mode
+        if (game.ships[i].x<-250) {
+          game.ships[i].set({vx:game.ships[i].vx+((Math.sqrt(d)-100)/10)*Math.cos(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250)))})
         }
         else {
-          game.ships[i].set({kill:true})
+          game.ships[i].set({vx:game.ships[i].vx-((Math.sqrt(d)-100)/10)*Math.cos(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250)))})
+        } 
+        if (game.ships[i].y>250) {
+          game.ships[i].set({vy:game.ships[i].vy-Math.abs(((Math.sqrt(d)-100)/10)*Math.sin(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250))))})
         }
-        // echo((Math.sqrt(((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250))))))-100)
+        else {
+          game.ships[i].set({vy:game.ships[i].vy+Math.abs(((Math.sqrt(d)-100)/10)*Math.sin(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250))))})
+        }
       }
     }
   }
@@ -600,6 +613,14 @@ var customObj = function()
   position: {x:-335,y:-245,z:0},
   rotation: {x:0,y:0,z:0},
   scale: {x:10,y:30,z:1}
+  }) ;
+  
+  game.setObject({
+  id: "Logo",
+  type: Logo,
+  position: {x:0,y:0,z:0},
+  rotation: {x:3.141592,y:0,z:0},
+  scale: {x:40,y:40,z:1}
   }) ;
   
   // game.setObject({
@@ -710,10 +731,16 @@ var endArea = {
   emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG3.png"
 }
 
+var Logo = {
+  id: "Logo",
+  obj: "https://starblast.data.neuronality.com/mods/objects/plane.obj",
+  emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG6.png"
+}
+
 var center = {
   id: "center",
   obj: "https://starblast.data.neuronality.com/mods/objects/plane.obj",
-  emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG1.png"
+  emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG7.png"
 };
 
 var desc4 = {
@@ -733,7 +760,7 @@ var desc3 = {
 this.options = {
   soundtrack: "argon.mp3",
   root_mode: "",
-  map_name: "Aim Training V1.2.3",
+  map_name: "Aim Training V1.2.4",
   custom_map: map,
   vocabulary: VOCABULARY,
   speed_mod: 1.2,
@@ -781,8 +808,8 @@ this.tick = function(game) {
     if (duelA==2 && area1==2)                   //start duel
     {
       angle=360*Math.random();
-      game.ships[a1ships[0]].set({x:(85*Math.cos(angle)-245),y:(85*Math.sin(angle)+245),invulnerable:60,shield:999,crystals:720});
-      game.ships[a1ships[1]].set({x:(85*Math.cos(angle-180)-245),y:(85*Math.sin(angle-180)+245),invulnerable:60,shield:999,crystals:720});
+      game.ships[a1ships[0]].set({x:(85*Math.cos(angle)-245),y:(85*Math.sin(angle)+245),invulnerable:60,shield:999,crystals:979,shield:999});
+      game.ships[a1ships[1]].set({x:(85*Math.cos(angle-180)-245),y:(85*Math.sin(angle-180)+245),invulnerable:60,shield:999,crystals:979,shield:999});
       duelA=3;
     }
     if (duelA==3 && area1!=2)                   //mark duel started
