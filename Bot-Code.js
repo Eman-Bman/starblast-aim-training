@@ -194,27 +194,27 @@ map=
 "                                                                                \n"+
 "                                                                                \n"+
 "                                                                                \n"+
-"                                                      999    9999999    999     \n"+
-"                                                      99   999     999   99     \n"+
-"                                                      9 9 99         99 9 9     \n"+
-"                                                         99           99        \n"+
-"                                                        99             99       \n"+
-"                                                       99               99      \n"+
-"                                                       9                 9      \n"+
-"                                                      99                 99     \n"+
-"                                                      9                   9     \n"+
-"                                                      9                   9     \n"+
-"                                                      9                   9     \n"+
-"                                                      9                   9     \n"+
-"                                                      9                   9     \n"+
-"                                                      99                 99     \n"+
-"                                                       9                 9      \n"+
-"                                                       99               99      \n"+
-"                                                        99             99       \n"+
-"                                                         99           99        \n"+
-"                                                      9 9 99         99 9 9     \n"+
-"                                                      99   999     999   99     \n"+
-"                                                      999    9999999    999     \n"+
+"     999    9999999    999                            999    9999999    999     \n"+
+"     99   999     999   99                            99   999     999   99     \n"+
+"     9 9 99         99 9 9                            9 9 99         99 9 9     \n"+
+"        99           99                                  99           99        \n"+
+"       99             99                                99             99       \n"+
+"      99               99                              99               99      \n"+
+"      9                 9                              9                 9      \n"+
+"     99                 99                            99                 99     \n"+
+"     9                   9                            9                   9     \n"+
+"     9                   9                            9                   9     \n"+
+"     9                   9                            9                   9     \n"+
+"     9                   9                            9                   9     \n"+
+"     9                   9                            9                   9     \n"+
+"     99                 99                            99                 99     \n"+
+"      9                 9                              9                 9      \n"+
+"      99               99                              99               99      \n"+
+"       99             99                                99             99       \n"+
+"        99           99                                  99           99        \n"+
+"     9 9 99         99 9 9                            9 9 99         99 9 9     \n"+
+"     99   999     999   99                            99   999     999   99     \n"+
+"     999    9999999    999                            999    9999999    999     \n"+
 "                                                                                \n"+
 "                                                                                \n"+
 "                                                                                \n"+
@@ -506,7 +506,7 @@ var arenaExt = function() {
     if (game.ships[i].type!=623)
     {
       let d=((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250))))
-      if (d<=40000 && d>=10000)
+      if (d<=20000 && d>=6400)
       {
         //damage mode
         // if (game.ships[i].shield>(Math.sqrt(d)-100)) {
@@ -521,16 +521,16 @@ var arenaExt = function() {
         // echo((Math.sqrt(((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250))))))-100)
         //push mode
         if (game.ships[i].x<-250) {
-          game.ships[i].set({vx:game.ships[i].vx+((Math.sqrt(d)-100)/10)*Math.cos(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250)))})
+          game.ships[i].set({vx:game.ships[i].vx+((Math.sqrt(d)-80)/10)*Math.cos(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250)))})
         }
         else {
-          game.ships[i].set({vx:game.ships[i].vx-((Math.sqrt(d)-100)/10)*Math.cos(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250)))})
+          game.ships[i].set({vx:game.ships[i].vx-((Math.sqrt(d)-80)/10)*Math.cos(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250)))})
         } 
         if (game.ships[i].y>250) {
-          game.ships[i].set({vy:game.ships[i].vy-Math.abs(((Math.sqrt(d)-100)/10)*Math.sin(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250))))})
+          game.ships[i].set({vy:game.ships[i].vy-Math.abs(((Math.sqrt(d)-80)/10)*Math.sin(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250))))})
         }
         else {
-          game.ships[i].set({vy:game.ships[i].vy+Math.abs(((Math.sqrt(d)-100)/10)*Math.sin(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250))))})
+          game.ships[i].set({vy:game.ships[i].vy+Math.abs(((Math.sqrt(d)-80)/10)*Math.sin(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250))))})
         }
       }
     }
@@ -596,7 +596,7 @@ var customObj = function()
   type: arena,
   position: {x:-242,y:245,z:0},
   rotation: {x:0,y:0,z:0},
-  scale: {x:240,y:240,z:1}
+  scale: {x:192,y:192,z:1}
   }) ;
 
   game.setObject({
@@ -614,15 +614,7 @@ var customObj = function()
   rotation: {x:0,y:0,z:0},
   scale: {x:10,y:30,z:1}
   }) ;
-  
-  game.setObject({
-  id: "Logo",
-  type: Logo,
-  position: {x:0,y:0,z:0},
-  rotation: {x:3.141592,y:0,z:0},
-  scale: {x:40,y:40,z:1}
-  }) ;
-  
+
   // game.setObject({
   // id: "desc4",
   // type: desc4,
@@ -731,11 +723,6 @@ var endArea = {
   emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG3.png"
 }
 
-var Logo = {
-  id: "Logo",
-  obj: "https://starblast.data.neuronality.com/mods/objects/plane.obj",
-  emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG6.png"
-}
 
 var center = {
   id: "center",
