@@ -410,7 +410,7 @@ var A_Speed = function(ship) {
   if (((ship.x*ship.x)+(ship.y*ship.y))<=8100 && ship.type!=623)
   {
     ship.set({type: (ship.type - ship.type.toString().charAt(0)*100) % tiersize[ship.type.toString().charAt(0)-1] + ship.type.toString().charAt(0)*100 + 1});
-    ship.set({stats:88888888, crystals:gemcaps[ship.type.toString().charAt(0)*1-1], generator: 1000, shield: 1000, x:0, y:0});
+    ship.set({stats:88888888, crystals:gemcaps[ship.type.toString().charAt(0)*1-1], generator: 0, shield: 1000, x:0, y:0});
   }
 };
 
