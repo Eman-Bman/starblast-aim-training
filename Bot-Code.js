@@ -612,13 +612,13 @@ var customObj = function()
   scale: {x:10,y:30,z:1}
   }) ;
 
-  // game.setObject({
-  // id: "desc4",
-  // type: desc4,
-  // position: {x:30,y:-45,z:-1},
-  // rotation: {x:0,y:0,z:0},
-  // scale: {x:0.2,y:0.2,z:0.01}
-  // }) ;
+  game.setObject({
+  id: "desc4",
+  type: desc4,
+  position: {x:0,y:0,z:-1},
+  rotation: {x:0,y:0,z:0},
+  scale: {x:20,y:20,z:0.01}
+  }) ;
   
   // game.setObject({
   // id: "desc3",
@@ -729,8 +729,8 @@ var center = {
 
 var desc4 = {
   id: "desc4",
-  obj: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/desc4.obj",
-  emissiveColor: 0xF0F0FF
+  obj: "https://starblast.data.neuronality.com/mods/objects/plane.obj",
+  emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG6.png"
 }
 
 var desc3 = {
