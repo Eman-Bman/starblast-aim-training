@@ -612,13 +612,13 @@ var customObj = function()
   scale: {x:10,y:30,z:1}
   }) ;
 
-  game.setObject({
-  id: "desc4",
-  type: desc4,
-  position: {x:0,y:0,z:-1},
-  rotation: {x:3.141592,y:0,z:0},
-  scale: {x:40,y:40,z:0.01}
-  }) ;
+  // game.setObject({
+  // id: "desc4",
+  // type: desc4,
+  // position: {x:0,y:0,z:-1},
+  // rotation: {x:3.141592,y:0,z:0},
+  // scale: {x:40,y:40,z:0.01}
+  // }) ;
   
   // game.setObject({
   // id: "desc3",
