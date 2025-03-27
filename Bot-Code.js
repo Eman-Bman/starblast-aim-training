@@ -541,7 +541,6 @@ var remAst4 = function()
 {
   for (var l=game.asteroids.length-1;l>-1;l--)
   {
-    echo(l);
     if (((((game.asteroids[l].x-250)*(game.asteroids[l].x-250))+((game.asteroids[l].y+250)*(game.asteroids[l].y+250))))<=10000)
     {
       game.asteroids[l].set({kill:true});
@@ -553,7 +552,6 @@ var remAst3 = function()
 {
   for (var l=game.asteroids.length-1;l>-1;l--)
   {
-    echo(l);
     if (((((game.asteroids[l].x+250)*(game.asteroids[l].x+250))+((game.asteroids[l].y+250)*(game.asteroids[l].y+250))))<=10000)
     {
       game.asteroids[l].set({kill:true});
@@ -563,7 +561,6 @@ var remAst3 = function()
 
 var newCircle = function()
 {
-  echo("newCircle")
   Next4=game.step+Math.floor(1000000/(game.step-startTime4+3333));
   for (var l=0;l<a4ship.length;l++) {
     angle=360*Math.random();
