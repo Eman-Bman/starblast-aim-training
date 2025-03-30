@@ -428,7 +428,7 @@ var Return = function(ship) {
 var Spectate = function(ship) {
   if (ship.type==623)
   {
-    ship.set({x:0,y:0,type:610,vx:0,vy:0,shield:999,stats:88888888,crystals:980,collider:true});
+    ship.set({x:0,y:0,type:609,vx:0,vy:0,shield:999,stats:88888888,crystals:980,collider:true});
   }
   else
   {
@@ -1020,7 +1020,7 @@ this.event = function(event,game) {
       break ;
     case "ship_spawned":
       echo("new spawn");
-      ship.set({x:0,y:0,type:610, stats:88888888, crystals:720, shield: 1000});
+      ship.set({x:0,y:0,type:609, stats:88888888, crystals:720, shield: 1000});
       shipCount();
       customObj();
       break ;
