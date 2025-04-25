@@ -187,88 +187,144 @@ emote3=String.fromCodePoint((127744+Math.floor(Math.random()*837)).toString(10))
 emote4=String.fromCodePoint((127744+Math.floor(Math.random()*837)).toString(10));
 let a3high=[0,"N/A"];
 let a4high=[0,"N/A"];
+const ranmap = [];
 
+for (let i = 0; i < 38; i++) {
+  let line = '';
+  for (let j = 0; j < 120; j++) {
+    if (Math.random() < 0.7) {
+      line += '0';
+    } else {
+      line += Math.floor(Math.random() * 6) + 4; // Random integer from 4 to 9
+    }
+  }
+  if (i < 37) {
+    line += '\n'; // Add newline to lines 1-19
+  }
+  ranmap.push(line);
+}
 map=
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"     999    9999999    999                            999    9999999    999     \n"+
-"     99   999     999   99                            99   999     999   99     \n"+
-"     9 9 99         99 9 9                            9 9 99         99 9 9     \n"+
-"        99           99                                  99           99        \n"+
-"       99             99                                99             99       \n"+
-"      99               99                              99               99      \n"+
-"      9                 9                              9                 9      \n"+
-"     99                 99                            99                 99     \n"+
-"     9                   9                            9                   9     \n"+
-"     9                   9                            9                   9     \n"+
-"     9                   9                            9                   9     \n"+
-"     9                   9                            9                   9     \n"+
-"     9                   9                            9                   9     \n"+
-"     99                 99                            99                 99     \n"+
-"      9                 9                              9                 9      \n"+
-"      99               99                              99               99      \n"+
-"       99             99                                99             99       \n"+
-"        99           99                                  99           99        \n"+
-"     9 9 99         99 9 9                            9 9 99         99 9 9     \n"+
-"     99   999     999   99                            99   999     999   99     \n"+
-"     999    9999999    999                            999    9999999    999     \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                 9999      9999                                 \n"+
-"                                 9  999  999  9                                 \n"+
-"                                 9    9  9    9                                 \n"+
-"                                 99   9999   99                                 \n"+
-"                                  9          9                                  \n"+
-"                                  999      999                                  \n"+
-"                                    9      9                                    \n"+
-"                                    9      9                                    \n"+
-"                                  999      999                                  \n"+
-"                                  9          9                                  \n"+
-"                                 99   9999   99                                 \n"+
-"                                 9    9  9    9                                 \n"+
-"                                 9  999  999  9                                 \n"+
-"                                 9999      9999                                 \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"     999    9999999    999                            999    9999999    999     \n"+
-"     99   999     999   99                            99   999     999   99     \n"+
-"     9 9 99         99 9 9                            9 9 99         99 9 9     \n"+
-"        99           99                                  99           99        \n"+
-"       99             99                                99             99       \n"+
-"      99               99                              99               99      \n"+
-"      9                 9                              9                 9      \n"+
-"     99                 99                            99                 99     \n"+
-"     999999999999999999999                            9                   9     \n"+
-"     9                   9                            9                   9     \n"+
-"     9                   9                            9                   9     \n"+
-"     9                   9                            9                   9     \n"+
-"     999999999999999999999                            9                   9     \n"+
-"     99                 99                            99                 99     \n"+
-"      9                 9                              9                 9      \n"+
-"      99               99                              99               99      \n"+
-"       99             99                                99             99       \n"+
-"        99           99                                  99           99        \n"+
-"     9 9 99         99 9 9                            9 9 99         99 9 9     \n"+
-"     99   999     999   99                            99   999     999   99     \n"+
-"     999    9999999    999                            999    9999999    999     \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                \n"+
-"                                                                                ";
+ranmap[0]+
+ranmap[1]+
+ranmap[2]+
+ranmap[3]+
+ranmap[4]+
+ranmap[5]+
+ranmap[6]+
+ranmap[7]+
+ranmap[8]+
+ranmap[9]+
+ranmap[10]+
+ranmap[11]+
+ranmap[12]+
+ranmap[13]+
+ranmap[14]+
+ranmap[15]+
+ranmap[16]+
+ranmap[17]+
+ranmap[18]+
+"999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999\n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                         999    9999999    999                            999    9999999    999                         \n"+
+"                         99   999     999   99                            99   999     999   99                         \n"+
+"                         9 9 99         99 9 9                            9 9 99         99 9 9                         \n"+
+"                            99           99                                  99           99                            \n"+
+"                           99             99                                99             99                           \n"+
+"                          99               99                              99               99                          \n"+
+"                          9                 9                              9                 9                          \n"+
+"                         99                 99                            99                 99                         \n"+
+"                         9                   9                            9                   9                         \n"+
+"                         9                   9                            9                   9                         \n"+
+"                         9                   9                            9                   9                         \n"+
+"                         9                   9                            9                   9                         \n"+
+"                         9                   9                            9                   9                         \n"+
+"                         99                 99                            99                 99                         \n"+
+"                          9                 9                              9                 9                          \n"+
+"                          99               99                              99               99                          \n"+
+"                           99             99                                99             99                           \n"+
+"                            99           99                                  99           99                            \n"+
+"                         9 9 99         99 9 9                            9 9 99         99 9 9                         \n"+
+"                         99   999     999   99                            99   999     999   99                         \n"+
+"                         999    9999999    999                            999    9999999    999                         \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                     9999 9999 9999                                                     \n"+
+"                                                     9  999  999  9                                                     \n"+
+"                                                     9    9  9    9                                                     \n"+
+"                                                     99   9  9   99                                                     \n"+
+"                                                      9          9                                                      \n"+
+"                                                      999      999                                                      \n"+
+"                                                        9      9                                                        \n"+
+"                                                        9      9                                                        \n"+
+"                                                      999      999                                                      \n"+
+"                                                      9          9                                                      \n"+
+"                                                     99   9  9   99                                                     \n"+
+"                                                     9    9  9    9                                                     \n"+
+"                                                     9  999  999  9                                                     \n"+
+"                                                    99999      99999                                                    \n"+
+"                                                    9              9                                                    \n"+
+"                                                    9 9 9 9999 9 9 9                                                    \n"+
+"                                                    9999999  9999999                                                    \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                         999    9999999    999                            999    9999999    999                         \n"+
+"                         99   999     999   99                            99   999     999   99                         \n"+
+"                         9 9 99         99 9 9                            9 9 99         99 9 9                         \n"+
+"                            99           99                                  99           99                            \n"+
+"                           99             99                                99             99                           \n"+
+"                          99               99                              99               99                          \n"+
+"                          9                 9                              9                 9                          \n"+
+"                         99                 99                            99                 99                         \n"+
+"                         999999999999999999999                            9                   9                         \n"+
+"                         9                   9                            9                   9                         \n"+
+"                         9                   9                            9                   9                         \n"+
+"                         9                   9                            9                   9                         \n"+
+"                         999999999999999999999                            9                   9                         \n"+
+"                         99                 99                            99                 99                         \n"+
+"                          9                 9                              9                 9                          \n"+
+"                          99               99                              99               99                          \n"+
+"                           99             99                                99             99                           \n"+
+"                            99           99                                  99           99                            \n"+
+"                         9 9 99         99 9 9                            9 9 99         99 9 9                         \n"+
+"                         99   999     999   99                            99   999     999   99                         \n"+
+"                         999    9999999    999                            999    9999999    999                         \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999\n"+
+ranmap[19]+
+ranmap[20]+
+ranmap[21]+
+ranmap[22]+
+ranmap[23]+
+ranmap[24]+
+ranmap[25]+
+ranmap[26]+
+ranmap[27]+
+ranmap[28]+
+ranmap[29]+
+ranmap[30]+
+ranmap[31]+
+ranmap[32]+
+ranmap[33]+
+ranmap[34]+
+ranmap[35]+
+ranmap[36]+
+ranmap[37];
+
 const VOCABULARY = [
     // 1
     {text: "You",       icon: "\u004e", key: "O"},
@@ -612,13 +668,13 @@ var customObj = function()
   scale: {x:10,y:30,z:1}
   }) ;
 
-  // game.setObject({
-  // id: "desc4",
-  // type: desc4,
-  // position: {x:0,y:0,z:-1},
-  // rotation: {x:3.141592,y:0,z:0},
-  // scale: {x:40,y:40,z:0.01}
-  // }) ;
+  game.setObject({
+  id: "logo",
+  type: logo,
+  position: {x:0,y:0,z:0.01},
+  rotation: {x:0,y:0,z:0},
+  scale: {x:20,y:20,z:1}
+  }) ;
   
   // game.setObject({
   // id: "desc3",
@@ -724,7 +780,7 @@ var endArea = {
 var center = {
   id: "center",
   obj: "https://starblast.data.neuronality.com/mods/objects/plane.obj",
-  emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG7.png"
+  emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG9.png"
 };
 
 var desc4 = {
@@ -739,12 +795,17 @@ var desc3 = {
   emissiveColor: 0xF0F0FF
 }
 
+var logo = {
+  id: "logo",
+  obj: "https://starblast.data.neuronality.com/mods/objects/plane.obj",
+  emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG6.png"
+};
 
 
 this.options = {
   soundtrack: "argon.mp3",
   root_mode: "",
-  map_name: "Aim Training V1.2.4",
+  map_name: "Aim Training V1.3.0",
   custom_map: map,
   vocabulary: VOCABULARY,
   speed_mod: 1.2,
@@ -755,7 +816,7 @@ this.options = {
   starting_ship:800,
   ships: ships,
   reset_tree:true,
-  map_size: 80
+  map_size: 120
 };
 
 this.tick = function(game) {
@@ -849,6 +910,7 @@ this.tick = function(game) {
         if (area3<a3cap && game.ships[i].type!=623) {
         remAst3();
         game.ships[i].set({x:-250,y:-250,invulnerable:300,score:0,crystals:0,type:(game.ships[i].type+tiersize[game.ships[i].type.toString().charAt(0)-1]),stats:88888888,shield:999});
+        game.ships[i].emptyWeapons()
         a3ship=a3ship+[i]
         if (area3===0)
         {
@@ -876,6 +938,7 @@ this.tick = function(game) {
       {
         //area4
         if (area4<a4cap && game.ships[i].type!=623) {
+        game.ships[i].emptyWeapons()
         remAst4();
         game.ships[i].set({x:250,y:-250,invulnerable:300,score:0,crystals:0,type:(game.ships[i].type+tiersize[game.ships[i].type.toString().charAt(0)-1]),stats:88888888,shield:999});
         a4ship=a4ship+[i]
@@ -891,6 +954,11 @@ this.tick = function(game) {
         if (game.ships[i].type==623) {
         game.ships[i].set({x:250,y:-250});
         }
+      }
+      if (((((game.ships[i].x)*(game.ships[i].x))+((game.ships[i].y-50)*(game.ships[i].y-50))))<=100) {
+        //area5
+        game.ships[i].set({x:0,y:-590,invulnerable:300,stats:88888888,shield:999});
+
       }
     }
   }
@@ -983,6 +1051,14 @@ this.tick = function(game) {
   if (game.step==rerem)
   {
     remAst4();
+  }
+  if (game.step%600===0) {
+    game.addCollectible({code:10,x:25,y:-85})
+    game.addCollectible({code:11,x:45,y:-85})
+    game.addCollectible({code:12,x:65,y:-85})
+    game.addCollectible({code:40,x:-25,y:-85})
+    game.addCollectible({code:41,x:-45,y:-85})
+    game.addCollectible({code:42,x:-65,y:-85})
   }
 };
 
