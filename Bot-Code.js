@@ -192,7 +192,7 @@ const ranmap = [];
 for (let i = 0; i < 38; i++) {
   let line = '';
   for (let j = 0; j < 120; j++) {
-    if (Math.random() < 0.7) {
+    if (Math.random() < 0.85) {
       line += '0';
     } else {
       line += Math.floor(Math.random() * 6) + 4; // Random integer from 4 to 9
