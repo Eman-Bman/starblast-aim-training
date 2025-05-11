@@ -192,7 +192,7 @@ const ranmap = [];
 for (let i = 0; i < 38; i++) {
   let line = '';
   for (let j = 0; j < 120; j++) {
-    if (Math.random() < 0.85) {
+    if (Math.random() < 0.9) {
       line += '0';
     } else {
       line += Math.floor(Math.random() * 6) + 4; // Random integer from 4 to 9
@@ -223,33 +223,33 @@ ranmap[15]+
 ranmap[16]+
 ranmap[17]+
 ranmap[18]+
-"999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999\n"+
 "                                                                                                                        \n"+
 "                                                                                                                        \n"+
 "                                                                                                                        \n"+
 "                                                                                                                        \n"+
 "                                                                                                                        \n"+
-"                         999    9999999    999                            999    9999999    999                         \n"+
-"                         99   999     999   99                            99   999     999   99                         \n"+
-"                         9 9 99         99 9 9                            9 9 99         99 9 9                         \n"+
-"                            99           99                                  99           99                            \n"+
-"                           99             99                                99             99                           \n"+
-"                          99               99                              99               99                          \n"+
-"                          9                 9                              9                 9                          \n"+
-"                         99                 99                            99                 99                         \n"+
-"                         9                   9                            9                   9                         \n"+
-"                         9                   9                            9                   9                         \n"+
-"                         9                   9                            9                   9                         \n"+
-"                         9                   9                            9                   9                         \n"+
-"                         9                   9                            9                   9                         \n"+
-"                         99                 99                            99                 99                         \n"+
-"                          9                 9                              9                 9                          \n"+
-"                          99               99                              99               99                          \n"+
-"                           99             99                                99             99                           \n"+
-"                            99           99                                  99           99                            \n"+
-"                         9 9 99         99 9 9                            9 9 99         99 9 9                         \n"+
-"                         99   999     999   99                            99   999     999   99                         \n"+
-"                         999    9999999    999                            999    9999999    999                         \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
 "                                                                                                                        \n"+
 "                                                                                                                        \n"+
 "                                                                                                                        \n"+
@@ -278,33 +278,33 @@ ranmap[18]+
 "                                                                                                                        \n"+
 "                                                                                                                        \n"+
 "                                                                                                                        \n"+
-"                         999    9999999    999                            999    9999999    999                         \n"+
-"                         99   999     999   99                            99   999     999   99                         \n"+
-"                         9 9 99         99 9 9                            9 9 99         99 9 9                         \n"+
-"                            99           99                                  99           99                            \n"+
-"                           99             99                                99             99                           \n"+
-"                          99               99                              99               99                          \n"+
-"                          9                 9                              9                 9                          \n"+
-"                         99                 99                            99                 99                         \n"+
-"                         999999999999999999999                            9                   9                         \n"+
-"                         9                   9                            9                   9                         \n"+
-"                         9                   9                            9                   9                         \n"+
-"                         9                   9                            9                   9                         \n"+
-"                         999999999999999999999                            9                   9                         \n"+
-"                         99                 99                            99                 99                         \n"+
-"                          9                 9                              9                 9                          \n"+
-"                          99               99                              99               99                          \n"+
-"                           99             99                                99             99                           \n"+
-"                            99           99                                  99           99                            \n"+
-"                         9 9 99         99 9 9                            9 9 99         99 9 9                         \n"+
-"                         99   999     999   99                            99   999     999   99                         \n"+
-"                         999    9999999    999                            999    9999999    999                         \n"+
 "                                                                                                                        \n"+
 "                                                                                                                        \n"+
 "                                                                                                                        \n"+
 "                                                                                                                        \n"+
 "                                                                                                                        \n"+
-"999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999\n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
+"                                                                                                                        \n"+
 ranmap[19]+
 ranmap[20]+
 ranmap[21]+
@@ -557,41 +557,55 @@ var shipCount = function() {
 };
 
 var arenaExt = function() {
-  for (var i=0;i<game.ships.length;i++)
-  {
-    if (game.ships[i].type!=623)
-    {
-      let d=((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250))))
-      if (d<=20000 && d>=6400)
-      {
-        //damage mode
-        // if (game.ships[i].shield>(Math.sqrt(d)-100)) {
-        //   game.ships[i].set({shield: game.ships[i].shield - (Math.sqrt(d)-100)})
-        // }
-        // else if (game.ships[i].crystals>(Math.sqrt(d)-100)) {
-        //   game.ships[i].set({shield: 0, crystals: game.ships[i].crystals - (Math.sqrt(d)-100)})
-        // }
-        // else {
-        //   game.ships[i].set({kill:true})
-        // }
-        // echo((Math.sqrt(((((game.ships[i].x+250)*(game.ships[i].x+250))+((game.ships[i].y-250)*(game.ships[i].y-250))))))-100)
-        //push mode
-        if (game.ships[i].x<-250) {
-          game.ships[i].set({vx:game.ships[i].vx+((Math.sqrt(d)-80)/10)*Math.cos(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250)))})
+  const corners = [
+    [-250, -250],
+    [-250,  250],
+    [ 250, -250],
+    [ 250,  250]
+  ];
+
+  const minDist = 100;    // Inner safe radius from corner
+  const maxDist = 130;   // Outer push radius
+  const pushStrength = 0.05;
+  const edgeLimit = 410; // Boundary threshold
+  const edgePush = 0.25;  // Force to apply when out of bounds
+
+  for (let i = 0; i < game.ships.length; i++) {
+    let ship = game.ships[i];
+    if (ship.type !== 623) {
+
+      // Corner pull zone
+      for (let j = 0; j < corners.length; j++) {
+        let [cx, cy] = corners[j];
+        let dx = ship.x - cx;
+        let dy = ship.y - cy;
+        let dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist > minDist && dist < maxDist) {
+          let normX = -dx / dist;
+          let normY = -dy / dist;
+          let force = (dist - minDist) * pushStrength;
+
+          ship.set({
+            vx: ship.vx + normX * force,
+            vy: ship.vy + normY * force
+          });
+
+          break; // only one corner applies per tick
         }
-        else {
-          game.ships[i].set({vx:game.ships[i].vx-((Math.sqrt(d)-80)/10)*Math.cos(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250)))})
-        } 
-        if (game.ships[i].y>250) {
-          game.ships[i].set({vy:game.ships[i].vy-Math.abs(((Math.sqrt(d)-80)/10)*Math.sin(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250))))})
-        }
-        else {
-          game.ships[i].set({vy:game.ships[i].vy+Math.abs(((Math.sqrt(d)-80)/10)*Math.sin(Math.atan((game.ships[i].y-250)/(game.ships[i].x+250))))})
-        }
+      }
+
+
+      if (390 < ship.y && ship.y < 410) {
+        ship.set({ vy: ship.vy + edgePush });
+      } 
+      else if (-390> ship.y && ship.y > -410) {
+        ship.set({ vy: ship.vy - edgePush });
       }
     }
   }
-}
+};
+
 
 var remAst4 = function()
 {
@@ -645,11 +659,35 @@ var customObj = function()
   }) ;
 
   game.setObject({
-  id: "arena",
+  id: "arena1",
   type: arena,
-  position: {x:-242,y:245,z:0},
+  position: {x:-250,y:250,z:0},
   rotation: {x:0,y:0,z:0},
-  scale: {x:192,y:192,z:1}
+  scale: {x:250,y:250,z:1}
+  }) ;
+  
+  game.setObject({
+  id: "arena2",
+  type: arena,
+  position: {x:250,y:250,z:0},
+  rotation: {x:0,y:0,z:0},
+  scale: {x:250,y:250,z:1}
+  }) ;  
+  
+  game.setObject({
+  id: "arena3",
+  type: arena,
+  position: {x:-250,y:-250,z:0},
+  rotation: {x:0,y:0,z:0},
+  scale: {x:250,y:250,z:1}
+  }) ;
+  
+  game.setObject({
+  id: "arena4",
+  type: arena,
+  position: {x:250,y:-250,z:0},
+  rotation: {x:0,y:0,z:0},
+  scale: {x:250,y:250,z:1}
   }) ;
 
   game.setObject({
@@ -674,6 +712,22 @@ var customObj = function()
   position: {x:0,y:0,z:0.01},
   rotation: {x:0,y:0,z:0},
   scale: {x:20,y:20,z:1}
+  }) ;
+  
+  game.setObject({
+  id: "wall1",
+  type: wall,
+  position: {x:0,y:-405,z:0.01},
+  rotation: {x:0,y:0,z:0},
+  scale: {x:1200,y:10,z:1}
+  }) ;
+  
+  game.setObject({
+  id: "wall2",
+  type: wall,
+  position: {x:0,y:405,z:0.01},
+  rotation: {x:0,y:0,z:3.14},
+  scale: {x:1200,y:10,z:1}
   }) ;
   
   // game.setObject({
@@ -801,18 +855,23 @@ var logo = {
   emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG6.png"
 };
 
+var wall = {
+  id: "wall",
+  obj: "https://starblast.data.neuronality.com/mods/objects/plane.obj",
+  emissive: "https://raw.githubusercontent.com/Eman-Bman/starblast-aim-training/refs/heads/main/PNG10.png"
+};
 
 this.options = {
   soundtrack: "argon.mp3",
   root_mode: "",
-  map_name: "Aim Training V1.3.0",
+  map_name: "Aim Training V1.3.1",
   custom_map: map,
   vocabulary: VOCABULARY,
   speed_mod: 1.2,
   lives: 5,
   radar_zoom: 1,
   weapons_store: false,
-  asteroids_strength: 6,
+  asteroids_strength: 1,
   starting_ship:800,
   ships: ships,
   reset_tree:true,
