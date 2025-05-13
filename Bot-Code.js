@@ -870,7 +870,7 @@ this.options = {
   speed_mod: 1.2,
   lives: 5,
   radar_zoom: 1,
-  weapons_store: false,
+  weapons_store: true,
   asteroids_strength: 1,
   starting_ship:800,
   ships: ships,
